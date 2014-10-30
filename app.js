@@ -7,6 +7,10 @@
  * Original Author: Fang Li.
  * Project: https://github.com/strima/grafana-authentication-proxy
  */
+var dotenv = require('dotenv');
+if (process.env.NODE_ENV != 'production') {
+  dotenv.load();
+}
 
 var express = require('express');
 var https = require('https');
@@ -46,12 +50,12 @@ require('./lib/google-oauth').configureOAuth(express, app, config);
 require('./lib/cas-auth.js').configureCas(express, app, config);
 
 // Setup ES proxy
-require('./lib/es-proxy').configureESProxy(app, config.es_host, config.es_port,
-          config.es_username, config.es_password, config.base_path);
+// require('./lib/es-proxy').configureESProxy(app, config.es_host, config.es_port,
+//           config.es_username, config.es_password, config.base_path);
 
 // Setup Graphite proxy
-require('./lib/gr-proxy').configureGRProxy(app, config.gr_host, config.gr_port,
-          config.gr_username, config.gr_password, config.base_path);
+// require('./lib/gr-proxy').configureGRProxy(app, config.gr_host, config.gr_port,
+//           config.gr_username, config.gr_password, config.base_path);
 
 // Serve config.js for grafana
 // We should use special config.js for the frontend and point the ES to __es/

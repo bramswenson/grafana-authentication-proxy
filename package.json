@@ -4,6 +4,7 @@
   "description": "Hosts the latest grafana and elasticsearch behind Google OAuth2, Basic Auth or CAS Authentication",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": ""
   },
   "repository": {
@@ -25,7 +26,8 @@
     "passport": "*",
     "passport-google-oauth": "*",
     "connect-restreamer": "*",
-    "cas": "*"
+    "cas": "*",
+    "dotenv": "0.4.0"
   },
   "devDependencies": {
   },

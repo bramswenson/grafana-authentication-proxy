@@ -15,3 +15,5 @@ cobertura-coverage.xml
 metadata
 *.sublime-workspace
 *.sublime-project
+*.swp
+.env

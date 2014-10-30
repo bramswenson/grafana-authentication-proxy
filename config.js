@@ -15,7 +15,7 @@ module.exports =  {
     // Proxy server configurations
     ////////////////////////////////////
     // Which port listen to
-    "listen_port": 9202,
+    "listen_port": process.env.PORT,
     // Control HTTP max-Age header. Whether the browser cache static grafana files or not?
     // 0 for no-cache, unit in millisecond, default to 0
     // We strongly recommand you set to a larger number such as 2592000000(a month) to get a better loading speed
@@ -51,14 +51,14 @@ module.exports =  {
      * in nginx or apache for cross origin domain sharing to work (CORS).
      * Check install documentation on github
      */
-    "graphiteUrl": "http://"+window.location.hostname+":8080",
-    
+    "graphiteUrl": "http://example.com:8080",
+
     ////////////////////////////////////
     // Security Configurations
     ////////////////////////////////////
     // Cookies secret
     // Please change the following secret randomly for security.
-    "cookie_secret": "REPLACE_WITH_A_RANDOM_STRING_PLEASE",
+    "cookie_secret": process.env.COOKIE_SECRET,
 
 
     ////////////////////////////////////
@@ -72,14 +72,14 @@ module.exports =  {
     // Google OAuth2 settings
     // Enable? true or false
     // When set to false, google OAuth will not be applied.
-    "enable_google_oauth": false,
+    "enable_google_oauth": true,
         // We use the following redirect URI:
         // http://YOUR-grafana-SITE:[listen_port]/auth/google/callback
         // Please add it in the google developers console first.
         // The client ID of Google OAuth2
-        "client_id": "",
-        "client_secret": "",  // The client secret of Google OAuth2
-        "allowed_emails": ["*"],  // An emails list for the authorized users
+        "client_id": process.env.GOOGLE_CLIENT_ID,
+        "client_secret": process.env.GOOGLE_CLIENT_SECRET,  // The client secret of Google OAuth2
+        "allowed_emails": ["@dailykos.com", "@civiqs.com"],  // An emails list for the authorized users
 
 
     // =================================
