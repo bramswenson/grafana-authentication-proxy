@@ -14,7 +14,7 @@
   "keywords": [
     "grafana",
     "authentication",
-    "oauth2",
+    "oauth2"
   ],
   "author": "strima",
   "license": "MIT",
