@@ -7,11 +7,23 @@ function (Settings) {
   return new Settings({
     datasources: {
       // these are replaced with express middleware
-      influxdb: {
+      civiqs_influx: {
         type: 'influxdb',
-        url: 'INFLUXDB_URL',
-        username: 'INFLUXDB_USER',
-        password: 'INFLUXDB_PASS',
+        url: 'CIVIQS_INFLUXDB_URL',
+        username: 'CIVIQS_INFLUXDB_USER',
+        password: 'CIVIQS_INFLUXDB_PASS',
+      },
+      dk_influx: {
+        type: 'influxdb',
+        url: 'DK_INFLUXDB_URL',
+        username: 'DK_INFLUXDB_USER',
+        password: 'DK_INFLUXDB_PASS',
+      },
+      dk_ads_influx: {
+        type: 'influxdb',
+        url: 'DK_ADS_INFLUXDB_URL',
+        username: 'DK_ADS_INFLUXDB_USER',
+        password: 'DK_ADS_INFLUXDB_PASS',
       },
       grafana: {
         type: 'influxdb',
