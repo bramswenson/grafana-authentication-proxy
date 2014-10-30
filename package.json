@@ -13,10 +13,8 @@
   },
   "keywords": [
     "grafana",
-    "elasticsearch",
     "authentication",
     "oauth2",
-    "basic authentication"
   ],
   "author": "strima",
   "license": "MIT",
@@ -26,12 +24,15 @@
     "passport": "*",
     "passport-google-oauth": "*",
     "connect-restreamer": "*",
-    "cas": "*",
     "dotenv": "0.4.0"
   },
   "devDependencies": {
   },
   "bugs": {
     "url": "https://github.com/strima/grafana-authentication-proxy/issues"
+  },
+  "engines": {
+    "node": "0.10.32",
+    "npm": "1.4.28"
   }
 }
