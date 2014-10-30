@@ -28,7 +28,7 @@ if (!config.base_path) {  config.base_path="" }
 
 app.use(express.cookieParser());
 app.use(express.session({ secret: config.cookie_secret }));
-require('./lib/google-oauth').configureOAuth(express, app, config);
+//require('./lib/google-oauth').configureOAuth(express, app, config);
 
 // Serve all grafana frontend files
 app.use(express.compress());
